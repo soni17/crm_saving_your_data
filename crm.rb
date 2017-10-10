@@ -72,7 +72,7 @@ class CRM
     newVal = gets.chomp.to_s
 
     contact = Contact.find(id)
-    contact.update(field,newVal)
+    contact.update(field => newVal)
 
   end
 
@@ -107,10 +107,10 @@ class CRM
     puts 'By which attribute would you like to search:'
     attrb = gets.chomp.to_s
 
-    puts "Enter new value:"
+    puts "Enter value:"
     newValue = gets.chomp.to_s
 
-    contact = Contact.find_by(attrb,newValue)
+    contact = Contact.find_by(attrb => newValue)
 
     if contact
       puts " "
