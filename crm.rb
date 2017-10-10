@@ -123,11 +123,10 @@ class CRM
 
 end
 
-contact1 = Contact.create('John', 'Smith', 'john@none.com', 'runs a lot')
-contact2 = Contact.create('Timothy', 'Geithner', 'tim@none.com', 'chef')
-contact3 = Contact.create('Mary', 'Johnson', 'mary@none.com', 'soccer player')
-contact4 = Contact.create('Billy', 'Thornton', 'billy@none.com', 'doctor')
+at_exit do
+  ActiveRecord::Base.connection.close
+end
+
 
 a_crm_app = CRM.new
 a_crm_app.main_menu
-
